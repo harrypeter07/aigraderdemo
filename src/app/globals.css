@@ -1,26 +1,149 @@
 @import "tailwindcss";
+/* styles/globals.css */
+/* Include all :root variables, body, navbar, card, etc., from static/css/style.css */
+/* Key excerpts for these components: */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.score-section {
+  text-align: center;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.score-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: var(--google-green);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.score-number {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.sentiment-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.sentiment-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+
+.sentiment-box.positive {
+  border-left: 4px solid var(--google-green);
+}
+
+.sentiment-box.negative {
+  border-left: 4px solid var(--google-red);
+}
+
+.sentiment-box.neutral {
+  border-left: 4px solid var(--google-yellow);
+}
+
+.sentiment-icon {
+  margin-right: 1rem;
+  color: var(--text-dark);
+}
+
+.sentiment-details {
+  flex-grow: 1;
+}
+
+.sentiment-label {
+  display: block;
+  color: #5f6368;
+  font-size: 0.875rem;
+}
+
+.sentiment-value {
+  display: block;
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.confidence-bar {
+  height: 4px;
+  background-color: #e8eaed;
+  border-radius: 2px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  width: var(--confidence);
+  background-color: var(--google-blue);
+  border-radius: 2px;
+  transition: width 1s ease-in-out;
+}
+
+.confidence-label {
+  display: block;
+  color: #5f6368;
+  font-size: 0.75rem;
+}
+
+.feedback-section {
+  background-color: white;
+  padding: var(--spacing);
+  border-radius: 8px;
+  margin-top: var(--spacing);
+}
+
+.feedback-content {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.feedback-content h3 {
+  color: var(--text-dark);
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feedback-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feedback-content li {
+  margin-bottom: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
 }
+

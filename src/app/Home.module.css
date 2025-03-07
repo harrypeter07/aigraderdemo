@@ -1,0 +1,43 @@
+/* styles/Home.module.css */
+.uploadContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing);
+  }
+  
+  /* Override or enhance card styles for homepage */
+  .card {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--spacing);
+  }
+  
+  /* Form label styling */
+  .formLabel {
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Small text below labels (e.g., for optional model answer note) */
+  .infoText {
+    color: #5f6368;
+    font-size: 0.875rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Button container for centering */
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .uploadContainer {
+      padding: 12px;
+    }
+  }
