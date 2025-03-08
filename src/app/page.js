@@ -1,7 +1,7 @@
-// app/page.js
+// src/app/page.js
 'use client';
 import { useState } from 'react';
-import UploadBox from '../components/UploadBox';
+import UploadBox from '@/components/UploadBox';
 import styles from './Home.module.css';
 
 export default function Home() {
@@ -34,23 +34,23 @@ export default function Home() {
 
   return (
     <div className={styles.uploadContainer}>
-      <div className="card">
+      <div className={styles.card}>
         <div className="card-body">
           <h1 className="card-title text-center mb-4">Assignment Grading</h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="form-label ">Student Assignment (PDF) *</label>
+              <label className={styles.formLabel}>Student Assignment (PDF) *</label>
               <UploadBox onFileSelect={(file) => setAssignmentFile(file)} accept=".pdf" required />
             </div>
             <div className="mb-4">
-              <label className="form-label">Model Answer (PDF) - Optional</label>
-              <small className="text-muted d-block mb-2">
+              <label className={styles.formLabel}>Model Answer (PDF) - Optional</label>
+              <small className={styles.infoText}>
                 If no model answer is provided, AI will evaluate based on general criteria.
               </small>
               <UploadBox onFileSelect={(file) => setModelFile(file)} accept=".pdf" />
             </div>
-            <div className="text-center">
-              <button type="submit" className="btn btn-primary btn-lg" disabled={isSubmitting}>
+            <div className={styles.buttonContainer}>
+              <button type="submit" className="btn-primary" disabled={isSubmitting}>
                 {isSubmitting ? (
                   <>
                     <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>

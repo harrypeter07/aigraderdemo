@@ -1,10 +1,12 @@
-// lib/pdfProcessor.js
+// src/lib/pdfProcessor.js
 import { promises as fs } from 'fs';
 import pdf from 'pdf-parse';
 
 export async function extractTextFromPDF(pdfPath) {
   try {
+    console.log('Received pdfPath in pdfProcessor:', pdfPath);
     const pdfBytes = await fs.readFile(pdfPath);
+    console.log('PDF file read successfully, size:', pdfBytes.length);
     const data = await pdf(pdfBytes);
     const text = data.text;
 
